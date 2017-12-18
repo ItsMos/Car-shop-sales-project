@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.indicator = new System.Windows.Forms.Panel();
-            this.ordersBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ordersTab = new System.Windows.Forms.Button();
+            this.inventoryTab = new System.Windows.Forms.Button();
+            this.dashboardTab = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.iconButton1 = new FontAwesomeIcons.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.closeBtn = new System.Windows.Forms.Label();
             this.tileBorderBottom = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesomeIcons.IconButton();
@@ -51,18 +51,28 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.dashboardPanel = new System.Windows.Forms.Panel();
             this.inventoryPanel = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addNewBtn = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.newCarMake = new System.Windows.Forms.TextBox();
+            this.newCarPrice = new System.Windows.Forms.TextBox();
+            this.newCarName = new System.Windows.Forms.TextBox();
+            this.newCarType = new System.Windows.Forms.ComboBox();
             this.carGrid = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.database1DataSet = new WindowsFormsApp1.Database1DataSet();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.ordersPanel = new System.Windows.Forms.Panel();
+            this.dequeueBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lstOrders = new System.Windows.Forms.ListBox();
-            this.dequeueBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconButton2)).BeginInit();
             this.dashboardPanel.SuspendLayout();
             this.inventoryPanel.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
@@ -83,9 +94,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
             this.panel1.Controls.Add(this.indicator);
-            this.panel1.Controls.Add(this.ordersBtn);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.ordersTab);
+            this.panel1.Controls.Add(this.inventoryTab);
+            this.panel1.Controls.Add(this.dashboardTab);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -101,50 +112,50 @@
             this.indicator.Size = new System.Drawing.Size(5, 100);
             this.indicator.TabIndex = 1;
             // 
-            // ordersBtn
+            // ordersTab
             // 
-            this.ordersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ordersBtn.FlatAppearance.BorderSize = 0;
-            this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ordersBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ordersBtn.Location = new System.Drawing.Point(0, 340);
-            this.ordersBtn.Name = "ordersBtn";
-            this.ordersBtn.Size = new System.Drawing.Size(200, 100);
-            this.ordersBtn.TabIndex = 2;
-            this.ordersBtn.Text = "Orders";
-            this.ordersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ordersBtn.UseVisualStyleBackColor = true;
-            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
+            this.ordersTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ordersTab.FlatAppearance.BorderSize = 0;
+            this.ordersTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersTab.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ordersTab.Location = new System.Drawing.Point(0, 340);
+            this.ordersTab.Name = "ordersTab";
+            this.ordersTab.Size = new System.Drawing.Size(200, 100);
+            this.ordersTab.TabIndex = 2;
+            this.ordersTab.Text = "Orders";
+            this.ordersTab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ordersTab.UseVisualStyleBackColor = true;
+            this.ordersTab.Click += new System.EventHandler(this.ordersTab_Click);
             // 
-            // button2
+            // inventoryTab
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(0, 238);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 100);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Inventory";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.inventoryTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.inventoryTab.FlatAppearance.BorderSize = 0;
+            this.inventoryTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inventoryTab.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.inventoryTab.Location = new System.Drawing.Point(0, 238);
+            this.inventoryTab.Name = "inventoryTab";
+            this.inventoryTab.Size = new System.Drawing.Size(200, 100);
+            this.inventoryTab.TabIndex = 2;
+            this.inventoryTab.Text = "Inventory";
+            this.inventoryTab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.inventoryTab.UseVisualStyleBackColor = true;
+            this.inventoryTab.Click += new System.EventHandler(this.inventoryTab_Click);
             // 
-            // button1
+            // dashboardTab
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 100);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Dashboard";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dashboardTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dashboardTab.FlatAppearance.BorderSize = 0;
+            this.dashboardTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dashboardTab.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.dashboardTab.Location = new System.Drawing.Point(0, 138);
+            this.dashboardTab.Name = "dashboardTab";
+            this.dashboardTab.Size = new System.Drawing.Size(200, 100);
+            this.dashboardTab.TabIndex = 2;
+            this.dashboardTab.Text = "Dashboard";
+            this.dashboardTab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.dashboardTab.UseVisualStyleBackColor = true;
+            this.dashboardTab.Click += new System.EventHandler(this.dashboardTab_Click);
             // 
             // panel2
             // 
@@ -217,24 +228,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(77)))), ((int)(((byte)(88)))));
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.closeBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(200, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(588, 19);
             this.panel4.TabIndex = 3;
             // 
-            // label3
+            // closeBtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.label3.Location = new System.Drawing.Point(558, -2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "x";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.closeBtn.AutoSize = true;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.closeBtn.Location = new System.Drawing.Point(558, -2);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(18, 21);
+            this.closeBtn.TabIndex = 0;
+            this.closeBtn.Text = "x";
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // tileBorderBottom
             // 
@@ -325,6 +336,7 @@
             // 
             this.inventoryPanel.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._25400811_1990470917858064_374148922_o;
             this.inventoryPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.inventoryPanel.Controls.Add(this.groupBox2);
             this.inventoryPanel.Controls.Add(this.carGrid);
             this.inventoryPanel.Controls.Add(this.label8);
             this.inventoryPanel.Location = new System.Drawing.Point(201, 55);
@@ -333,16 +345,121 @@
             this.inventoryPanel.TabIndex = 5;
             this.inventoryPanel.Visible = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.addNewBtn);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.newCarMake);
+            this.groupBox2.Controls.Add(this.newCarPrice);
+            this.groupBox2.Controls.Add(this.newCarName);
+            this.groupBox2.Controls.Add(this.newCarType);
+            this.groupBox2.Location = new System.Drawing.Point(19, 264);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(520, 85);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Add new car";
+            // 
+            // addNewBtn
+            // 
+            this.addNewBtn.Location = new System.Drawing.Point(452, 44);
+            this.addNewBtn.Name = "addNewBtn";
+            this.addNewBtn.Size = new System.Drawing.Size(61, 29);
+            this.addNewBtn.TabIndex = 9;
+            this.addNewBtn.Text = "Add";
+            this.addNewBtn.UseVisualStyleBackColor = true;
+            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(373, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 21);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Price";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(235, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 21);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Car Type";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label10.Location = new System.Drawing.Point(120, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 21);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Car Name";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(16, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 21);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Car Make";
+            // 
+            // newCarMake
+            // 
+            this.newCarMake.Location = new System.Drawing.Point(8, 44);
+            this.newCarMake.Name = "newCarMake";
+            this.newCarMake.Size = new System.Drawing.Size(100, 27);
+            this.newCarMake.TabIndex = 4;
+            // 
+            // newCarPrice
+            // 
+            this.newCarPrice.Location = new System.Drawing.Point(347, 44);
+            this.newCarPrice.Name = "newCarPrice";
+            this.newCarPrice.Size = new System.Drawing.Size(100, 27);
+            this.newCarPrice.TabIndex = 7;
+            // 
+            // newCarName
+            // 
+            this.newCarName.Location = new System.Drawing.Point(114, 44);
+            this.newCarName.Name = "newCarName";
+            this.newCarName.Size = new System.Drawing.Size(100, 27);
+            this.newCarName.TabIndex = 5;
+            // 
+            // newCarType
+            // 
+            this.newCarType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.newCarType.FormattingEnabled = true;
+            this.newCarType.Items.AddRange(new object[] {
+            "Sedan",
+            "Coupe",
+            "SUV",
+            "Hatchback",
+            "Truck"});
+            this.newCarType.Location = new System.Drawing.Point(220, 44);
+            this.newCarType.Name = "newCarType";
+            this.newCarType.Size = new System.Drawing.Size(121, 29);
+            this.newCarType.TabIndex = 6;
+            // 
             // carGrid
             // 
             this.carGrid.AllowUserToAddRows = false;
             this.carGrid.AllowUserToDeleteRows = false;
             this.carGrid.AllowUserToOrderColumns = true;
             this.carGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carGrid.Location = new System.Drawing.Point(32, 83);
+            this.carGrid.Location = new System.Drawing.Point(17, 44);
             this.carGrid.Name = "carGrid";
             this.carGrid.ReadOnly = true;
-            this.carGrid.Size = new System.Drawing.Size(490, 266);
+            this.carGrid.Size = new System.Drawing.Size(518, 214);
             this.carGrid.TabIndex = 3;
             // 
             // label8
@@ -390,6 +507,16 @@
             this.ordersPanel.Size = new System.Drawing.Size(534, 338);
             this.ordersPanel.TabIndex = 4;
             this.ordersPanel.Visible = false;
+            // 
+            // dequeueBtn
+            // 
+            this.dequeueBtn.Location = new System.Drawing.Point(231, 263);
+            this.dequeueBtn.Name = "dequeueBtn";
+            this.dequeueBtn.Size = new System.Drawing.Size(234, 33);
+            this.dequeueBtn.TabIndex = 3;
+            this.dequeueBtn.Text = "Complete order (Dequeue)";
+            this.dequeueBtn.UseVisualStyleBackColor = true;
+            this.dequeueBtn.Click += new System.EventHandler(this.dequeueBtn_Click);
             // 
             // groupBox1
             // 
@@ -440,25 +567,15 @@
             this.lstOrders.Size = new System.Drawing.Size(108, 214);
             this.lstOrders.TabIndex = 1;
             // 
-            // dequeueBtn
-            // 
-            this.dequeueBtn.Location = new System.Drawing.Point(231, 263);
-            this.dequeueBtn.Name = "dequeueBtn";
-            this.dequeueBtn.Size = new System.Drawing.Size(234, 33);
-            this.dequeueBtn.TabIndex = 3;
-            this.dequeueBtn.Text = "Complete order (Dequeue)";
-            this.dequeueBtn.UseVisualStyleBackColor = true;
-            this.dequeueBtn.Click += new System.EventHandler(this.dequeueBtn_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(788, 443);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.ordersPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dashboardPanel);
+            this.Controls.Add(this.ordersPanel);
             this.Controls.Add(this.inventoryPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -470,6 +587,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Click += new System.EventHandler(this.closeBtn_Click);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -485,6 +603,8 @@
             this.dashboardPanel.PerformLayout();
             this.inventoryPanel.ResumeLayout(false);
             this.inventoryPanel.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
@@ -501,13 +621,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button dashboardTab;
+        private System.Windows.Forms.Button inventoryTab;
         private System.Windows.Forms.Panel indicator;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label closeBtn;
         private FontAwesomeIcons.IconButton iconButton1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel tileBorderBottom;
@@ -520,7 +640,7 @@
         internal System.Windows.Forms.Panel dashboardPanel;
         private System.Windows.Forms.Panel inventoryPanel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button ordersBtn;
+        private System.Windows.Forms.Button ordersTab;
         private System.Windows.Forms.DataGridView carGrid;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private Database1DataSet database1DataSet;
@@ -532,6 +652,16 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button dequeueBtn;
+        private System.Windows.Forms.TextBox newCarName;
+        private System.Windows.Forms.TextBox newCarMake;
+        private System.Windows.Forms.ComboBox newCarType;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox newCarPrice;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button addNewBtn;
     }
 }
 

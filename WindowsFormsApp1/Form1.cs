@@ -29,11 +29,11 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PopulateInventory(); // for inventory panel
-            ShowStats();         // for dashboard
+            UpdateInventory(); // for inventory panel
+            UpdateStats();         // for dashboard
         }
 
-        private void ShowStats()
+        private void UpdateStats()
         {
             using (connection = new SqlConnection(connectionString))
             {
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void PopulateInventory()
+        private void UpdateInventory()
         {
             using (connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Cars", connection))
@@ -62,33 +62,28 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dashboardTab_Click(object sender, EventArgs e)
         {
-            indicator.Top = button1.Top;
+            indicator.Top = dashboardTab.Top;
             inventoryPanel.Visible = false;
             dashboardPanel.Visible = true;
             ordersPanel.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void inventoryTab_Click(object sender, EventArgs e)
         {
-            indicator.Top = button2.Top;
+            indicator.Top = inventoryTab.Top;
             inventoryPanel.Visible = true;
             dashboardPanel.Visible = false;
             ordersPanel.Visible = false;
         }
 
-        private void ordersBtn_Click(object sender, EventArgs e)
+        private void ordersTab_Click(object sender, EventArgs e)
         {
-            indicator.Top = ordersBtn.Top;
+            indicator.Top = ordersTab.Top;
             inventoryPanel.Visible = false;
             dashboardPanel.Visible = false;
             ordersPanel.Visible = true;
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -116,13 +111,30 @@ namespace WindowsFormsApp1
                     cmd.CommandText = "DELETE FROM Cars WHERE id = @order";
                     cmd.Parameters.AddWithValue("@order", order);
                     cmd.ExecuteNonQuery();
-                    ShowStats();
-                    PopulateInventory();
+                    UpdateStats();
+                    UpdateInventory();
                 }
             }
             catch (Exception ee)
             {
-                MessageBox.Show("SQL error "+ ee);
+                MessageBox.Show("SQL error " + ee);
+            }
+        }
+
+        private void addNewBtn_Click(object sender, EventArgs e)
+        {
+            using (var sc = new SqlConnection(connectionString))
+            using (var cmd = sc.CreateCommand())
+            {
+                sc.Open();
+                cmd.CommandText = "INSERT INTO Cars ([Make], [Name], [Type], [Price]) VALUES (@make, @name, @type, @price)";
+                cmd.Parameters.AddWithValue("@make", newCarMake.Text);
+                cmd.Parameters.AddWithValue("@name", newCarName.Text);
+                cmd.Parameters.AddWithValue("@type", newCarType.Text);
+                cmd.Parameters.AddWithValue("@price", newCarPrice.Text);
+                cmd.ExecuteNonQuery();
+                UpdateStats();
+                UpdateInventory();
             }
         }
     }
